@@ -1,5 +1,5 @@
 {
-  "name": "sbpay/sdk",
+  "name": "dimkasb/sbpay-sdk",
   "description": "SBPay.me PHP Library",
   "type": "library",
   "keywords": ["sbpay", "payment procesing", "api"],
