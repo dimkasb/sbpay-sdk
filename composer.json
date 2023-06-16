@@ -10,7 +10,7 @@
       "Sbpay\\": "lib/"
     },
     "files": [
-      "lib/SBPayClient.php",
+      "lib/SBPayClient.php"
     ]
   },
   "authors": [
