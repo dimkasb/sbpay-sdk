@@ -1,0 +1,24 @@
+{
+  "name": "sbpay/sdk",
+  "description": "SBPay.me PHP Library",
+  "type": "library",
+  "keywords": ["sbpay", "payment procesing", "api"],
+  "homepage": "https://sbpay.me/",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Sbpay\\": "lib/"
+    }
+  },
+  "authors": [
+    {
+      "name": "dimka",
+      "email": "dimkaben@notando.is"
+    }
+  ],
+  "require": {
+    "php": ">=8.1.0",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^7.7"
+  }
+}

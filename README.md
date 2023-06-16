@@ -1,1 +1,0 @@
-# sbpay-sdk
