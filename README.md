@@ -1,5 +1,6 @@
 # SBPay.me PHP SDK
 
+[![Build Status](https://github.com/dimkasb/sbpay-sdk/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/dimkasb/sbpay-sdk/actions?query=branch%3Amain)
 [![Latest Stable Version](https://poser.pugx.org/sbpay/sdk/v/stable.svg)](https://packagist.org/packages/sbpay/sdk)
 [![Total Downloads](https://poser.pugx.org/sbpay/sdk/downloads.svg)](https://packagist.org/packages/sbpay/sdk)
 [![License](https://poser.pugx.org/sbpay/sdk/license.svg)](https://packagist.org/packages/sbpay/sdk)
