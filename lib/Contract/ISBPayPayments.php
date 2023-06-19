@@ -12,11 +12,16 @@ interface ISBPayPayments
 {
 
     /**
-     * Approve payment order
+     * Approve payment order.
+     * Pass $paymentMethodReferenceId and $paymentMethodName to save payment method for future use
+     * (recurring payments or rebilling)
      *
      * @param int $id
      * @param string $reason
-     * @param $paymentMethod
+     * @param string $paymentMethod
+     * @param string|null $transactionId
+     * @param string|null $paymentMethodReferenceId
+     * @param string|null $paymentMethodName
      * @return void
      * @throws AccessDeniedException
      * @throws BadRequestException
@@ -24,7 +29,10 @@ interface ISBPayPayments
      * @throws UnauthorizedException
      * @throws UnexpectedException
      */
-    public function approveOrder(int $id, string $reason, $paymentMethod): void;
+    public function approveOrder(
+        int $id, string $reason, string $paymentMethod, ?string $transactionId = null,
+        ?string $paymentMethodReferenceId = null, ?string $paymentMethodName = null
+    ): void;
 
     /**
      * Refund payment order
@@ -58,6 +66,7 @@ interface ISBPayPayments
      *
      * @param array $data
      * @return void
+     * @throws UnexpectedException
      */
     public function validateCustomPaymentProcessorRequest(array $data): void;
 

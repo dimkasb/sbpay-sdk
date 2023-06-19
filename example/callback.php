@@ -14,5 +14,6 @@ $client = new \SBPay\SBPayClient(
     SBPAY_MERCHANT, SBPAY_HOST
 );
 $client->payments()->approveOrder(
-    $_GET['order_id'], 'Payment processed by custom processor', 'Custom PayPal'
+    $_GET['order_id'], 'Payment processed by custom processor', 'Custom PayPal',
+    'tr_1', 'pm_1', '4242***1'
 );

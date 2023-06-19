@@ -81,7 +81,7 @@ class SBPayClient implements Contract\ISBPayClient
      */
     public function __construct(
         string $token, string $secret, string $merchant,
-        string $server = 'https://app.sbpay.me/', string $signatureAlgorithm = 'sha256'
+        string $server = 'https://app.sbpay.me/api/', string $signatureAlgorithm = 'sha256'
     )
     {
         $this->token = $token;
