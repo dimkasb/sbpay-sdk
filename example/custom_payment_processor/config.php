@@ -9,4 +9,4 @@ const SBPAY_MERCHANT = 'xxxxx';
 // SBPay host
 const SBPAY_HOST = 'https://app.sbpay.me/';
 // Host for your demo page
-const HOST = 'https://demo-custom-processor.sbpay.me/';
+const HOST = 'https://demo-custom-processor.com/';
