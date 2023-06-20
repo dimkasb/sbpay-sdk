@@ -75,3 +75,7 @@ Available methods:
 ## Examples
 
 You can find custom payment processor example [`here`](https://github.com/dimkasb/sbpay-sdk/tree/main/example/custom_payment_processor)
+
+## Documentation for API Endpoints
+
+You can find API documentation [`here`](https://app.sbpay.me/en/api-documentation)
