@@ -89,9 +89,7 @@ class SBPayPayments extends SBPayServiceAbstract implements Contract\ISBPayPayme
      */
     public function getOrder(int $id): array
     {
-        return $this->client()->signedGet(
-            '/order/' . $id, $id
-        );
+        return $this->client()->request('GET', '/order/' . $id);
     }
 
     /**

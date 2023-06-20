@@ -25,9 +25,6 @@ class SBPaySubscriptions extends SBPayServiceAbstract implements Contract\ISBPay
      */
     public function getCustomerSubscriptions(string $projectId, string $customerId): array
     {
-        return $this->client()->signedGet(
-            sprintf('/%s/subscriptions/%s', $projectId, $customerId),
-            implode('|', [$projectId, $customerId])
-        );
+        return $this->client()->request('GET', sprintf('/%s/subscriptions/%s', $projectId, $customerId));
     }
 }
