@@ -4,6 +4,8 @@
 [![Latest Stable Version](https://poser.pugx.org/sbpay/sdk/v/stable.svg)](https://packagist.org/packages/sbpay/sdk)
 [![Total Downloads](https://poser.pugx.org/sbpay/sdk/downloads.svg)](https://packagist.org/packages/sbpay/sdk)
 [![License](https://poser.pugx.org/sbpay/sdk/license.svg)](https://packagist.org/packages/sbpay/sdk)
+[![PHP Version Require](http://poser.pugx.org/sbpay/sdk/require/php)](https://packagist.org/packages/sbpay/sdk)
+
 
 The SBPay.me PHP library provides convenient access to the SBPay.me API from
 applications written in the PHP language.
