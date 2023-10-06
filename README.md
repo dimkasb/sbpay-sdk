@@ -74,7 +74,12 @@ Available methods:
 
 ### Custom payment processor callbacks
 
-* Payment form URL. You will receive POST request here from browser with following data:
+Using SBPay.me, you have the flexibility to integrate a personalized payment processor. 
+Whenever SBPay needs to initiate a specific action, it will trigger a callback to the URL you have designated. You can configure these callback URLs within your SBPay.me account settings.
+
+Here is a list of the callback URLs you can configure:
+
+* Payment form URL. You will receive POST request from browser with following data:
 
 | Parameter name        | Description                                                                                       |
 |-----------------------|---------------------------------------------------------------------------------------------------|
