@@ -72,6 +72,67 @@ Available methods:
 |--------------------------|--------------------------------------------------------------|
 | getCustomerSubscriptions | Returns customer subscriptions list by Customer reference ID |
 
+### Custom payment processor callbacks
+
+* Payment form URL. You will receive POST request here from browser with following data:
+
+| Parameter name        | Description                                                                                       |
+|-----------------------|---------------------------------------------------------------------------------------------------|
+| order_id              | Order id in SBPay                                                                                 |
+| amount                | Amount                                                                                            |
+| currency              | Currency                                                                                          |
+| customer_id           | Customer reference id                                                                             |
+| save_payment_method   | 1 if customer selected to store payment method/0 if customer selected to not store payment method |
+| recurring_period_type | Recurring period type for recurring payments only (year/month/week/day)                           |
+| recurring_period      | Recurring period for recurring payments only (number)                                             |
+| return_url            | Return URL (you should redirect customer here after payment)                                      |
+| cancel_url            | Cancel URL (you should redirect customer here if customer cancels payment)                        |
+| timestamp             | Time stamp of request (to validate signature)                                                     |
+| algo                  | Algorithm of signature                                                                            |
+| signature             | Signature to validate request                                                                     |
+
+* Rebilling URL. You will receive HTTP request from our servers, when we need to charge customer again (when he selected to pay with Vaulted payment method or when it is time to charge recurring payment) with following data:
+
+| Parameter name              | Description                                                                      |
+|-----------------------------|----------------------------------------------------------------------------------|
+| order_id                    | Order id in SBPay                                                                |
+| amount                      | Amount                                                                           |
+| currency                    | Currency                                                                         |
+| customer_id                 | Customer reference id                                                            |
+| payment_method_reference_id | Payment method reference id (You should pass it during confirm initial payment) |
+| timestamp                   | Time stamp of request (to validate signature)                                    |
+| algo                        | Algorithm of signature                                                           |
+| signature                   | Signature to validate request                                                    |
+
+* Delete payment method URL. You will receive HTTP request from our servers, when customer decided to delete Vaulted payment method (remove card, etc.) with following data:
+
+| Parameter name              | Description                                                                     |
+|-----------------------------|---------------------------------------------------------------------------------|
+| customer_id                 | Customer reference id                                                           |
+| payment_method_reference_id | Payment method reference id (You should pass it during confirm initial payment) |
+| timestamp                   | Time stamp of request (to validate signature)                                   |
+| algo                        | Algorithm of signature                                                          |
+| signature                   | Signature to validate request                                                   |
+
+* Refund URL. You will receive HTTP request from our servers, when user of SBPay (SimplyBook) makes refund. You will receive following data:
+
+| Parameter name  | Description                                                                                       |
+|-----------------|---------------------------------------------------------------------------------------------------|
+| order_id        | Order id in SBPay                                                                                 |
+| amount          | Amount                                                                                            |
+| currency        | Currency                                                                                          |
+| transaction_id  | Transaction ID of payment (you should pass it during payment confirmation)                        |
+| timestamp       | Time stamp of request (to validate signature)                                                     |
+| algo            | Algorithm of signature                                                                            |
+| signature       | Signature to validate request                                                                     |
+
+You can use SDK to validate request:
+
+```php
+$client = new \SBPay\SBPayClient(SBPAY_TOKEN, SBPAY_SECRET ,SBPAY_MERCHANT, SBPAY_HOST);
+$client->payments()->validateCustomPaymentProcessorRequest($_POST);
+```
+
 ## Examples
 
 You can find custom payment processor example [`here`](https://github.com/dimkasb/sbpay-sdk/tree/main/example/custom_payment_processor)
